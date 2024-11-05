@@ -16,3 +16,12 @@ body {
     font-size: 300%;
     text-align:center
   }
+  button {
+    color:rgb(185, 116, 66);
+    border:none;
+    padding: 20px;
+    text-align: center;
+    display:inline-block;
+    font-size: 300%;
+    border-radius: 12px;
+  }
