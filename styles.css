@@ -12,10 +12,11 @@ h1 {
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: 2px;
+    color:white;
 }
 
 h1 span {
-    display: inline-block;
+    display: inline-block; 
     opacity: 0;
     transform: translateY(20px);
     animation: glideUp 1s forwards;
@@ -67,4 +68,3 @@ h1 span:nth-child(13) {
         transform: translateY(0);
     }
 }
-
