@@ -66,34 +66,43 @@ body {
 	}
 }
 
-p {
-    color: #905858;
-    font-size: 300%;
-    text-align: center;
-}
-  
-u {
-    color: rgb(112, 79, 79);
-    font-size: 300%;
-    text-align:center
-}
-  
-button {
-    color:rgb(43, 31, 23);
-    border:none;
-    padding: 20px;
-    text-align: center;
-    display:inline-block;
-    font-size: 300%;    
-    border-radius: 20px;
-    transition-duration: 0.2s;
-
-}
-  
-button:hover {
-    background-color:rgb(215,188,155);
-    padding:23px;
-
+h1{
+  margin: 0;
+  letter-spacing: -1px;
+  font-size: var(--headingSize);
 }
 
+.container{
+	width: 50%;
+}
+
+span{
+  display: inline-block;
+  overflow: hidden;
+  animation: .3s swift-up ease-in-out forwards;	
+}
+
+i{
+  font-style: normal;
+  position: relative;
+  top: var(--headingSize);
+  animation: .5s swift-up ease-in-out forwards;
+}
+
+@keyframes swift-up {
+  to {
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 1000px){
+	.container{
+		width: auto;
+		margin: 0 10%;
+	}
+	
+	:root{
+		--headingSize: 35px;
+	}
+}
 
