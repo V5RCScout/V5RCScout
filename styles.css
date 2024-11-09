@@ -34,7 +34,6 @@ h1 {
   animation: glideUp 1s ease-in-out forwards, moveToTop 1s ease-in-out 1s forwards;
 }
 
-/* New styles for the white bar */
 .swift-up-bar {
   position: absolute;
   top: calc(50% + var(--headingSize) / 2 + 10px); /* Start below the heading initially */
@@ -44,6 +43,7 @@ h1 {
   background-color: white;
   transform: translateX(-50%);
   opacity: 0;
+  border-radius: 10px; /* Make the bar rounded */
   animation: barExpand 1s ease-in-out 1s forwards, moveBarToTop 1s ease-in-out 2s forwards;
 }
 
