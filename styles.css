@@ -32,6 +32,19 @@ h1 {
   animation: glideUp 1s ease-in-out forwards, moveToTop 1s ease-in-out 1s forwards;
 }
 
+/* New styles for the white bar */
+.swift-up-bar {
+  position: absolute;
+  top: calc(50% + var(--headingSize) / 2 + 10px); /* Positioned below the heading initially */
+  left: 50%;
+  width: 0;
+  height: 5px; /* Bar height */
+  background-color: white;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: barExpand 1s ease-in-out 1s forwards, moveBarToTop 1s ease-in-out 2s forwards;
+}
+
 /* Keyframes for the glide-up effect */
 @keyframes glideUp {
   0% {
@@ -55,6 +68,28 @@ h1 {
     top: 0;
     opacity: 1;
     transform: translate(-50%, 0); /* Move to top middle */
+  }
+}
+
+/* Animation to expand the bar */
+@keyframes barExpand {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 150px; /* Final width of the bar */
+    opacity: 1;
+  }
+}
+
+/* Animation to move the bar with the heading */
+@keyframes moveBarToTop {
+  0% {
+    top: calc(50% + var(--headingSize) / 2 + 10px); /* Initial position below the heading */
+  }
+  100% {
+    top: calc(var(--headingSize) / 2); /* Position at the top near the heading */
   }
 }
 
@@ -93,4 +128,5 @@ h1 span:nth-child(13) { animation-delay: 1.2s; }
     --headingSize: 35px;
   }
 }
+
   
