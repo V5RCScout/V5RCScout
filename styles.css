@@ -20,6 +20,12 @@ body {
   overflow: hidden; /* Prevent overflow */
 }
 
+/* Link styling */
+a {
+  text-decoration: none; /* Remove underline from the link */
+  color: inherit; /* Inherit the color from the h1 */
+}
+
 /* Heading styles and animation */
 h1 {
   margin: 0;
@@ -34,11 +40,7 @@ h1 {
   animation: glideUp 1s ease-in-out forwards, moveToTop 1s ease-in-out 1s forwards;
 }
 
-a {
-  text-decoration: none; /* Remove underline from the link */
-  color: inherit; /* Inherit the color from the h1 */
-}
-
+/* Styles for the white bar */
 .swift-up-bar {
   position: absolute;
   top: calc(50% + var(--headingSize) / 2 + 10px); /* Start below the heading initially */
@@ -96,7 +98,7 @@ a {
     top: calc(50% + var(--headingSize) / 2 + 10px); /* Initial position below the heading */
   }
   100% {
-    top: calc(var(--headingSize) / 0.9; /* Stop a bit below the heading */
+    top: calc(var(--headingSize) / 0.9); /* Stop a bit below the heading */
   }
 }
 
