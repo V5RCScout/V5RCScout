@@ -34,6 +34,11 @@ h1 {
   animation: glideUp 1s ease-in-out forwards, moveToTop 1s ease-in-out 1s forwards;
 }
 
+a {
+  text-decoration: none; /* Remove underline from the link */
+  color: inherit; /* Inherit the color from the h1 */
+}
+
 .swift-up-bar {
   position: absolute;
   top: calc(50% + var(--headingSize) / 2 + 10px); /* Start below the heading initially */
