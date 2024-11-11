@@ -122,35 +122,10 @@ a.swift-up-text {
 }
 
 h1.reveal-text {
-  animation: textReveal 2s ease forwards 1.5s; /* Start after heading slides up */
+  animation: glideUp 1s ease-in-out forwards, moveToTop 1s ease-in-out 1s forwards;
 }
 
-/* Reveal animation */
-@keyframes textReveal {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* White bar below the heading */
-.swift-up-bar {
-  position: absolute;
-  top: calc(50% + var(--headingSize) / 2 + 10px);
-  left: 50%;
-  width: 600px;
-  height: 5px;
-  background-color: white;
-  transform: translateX(-50%);
-  opacity: 0;
-  border-radius: 10px;
-  animation: barExpand 1s ease-in-out 1s forwards, moveBarToTop 1s ease-in-out 2s forwards;
-}
-
+/* Keyframes for glide-up effect */
 @keyframes glideUp {
   0% {
     opacity: 0;
@@ -175,7 +150,20 @@ h1.reveal-text {
   }
 }
 
-/* Updated bar animation */
+/* White bar below the heading */
+.swift-up-bar {
+  position: absolute;
+  top: calc(50% + var(--headingSize) / 2 + 10px);
+  left: 50%;
+  width: 600px;
+  height: 5px;
+  background-color: white;
+  transform: translateX(-50%);
+  opacity: 0;
+  border-radius: 10px;
+  animation: barExpand 1s ease-in-out 1s forwards, moveBarToTop 1s ease-in-out 2s forwards;
+}
+
 @keyframes barExpand {
   0% {
     width: 0;
@@ -196,35 +184,23 @@ h1.reveal-text {
   }
 }
 
-/* Typing effect animation */
-.typing-effect {
+/* Reveal animation for the paragraph */
+.reveal-paragraph {
   font-size: 20px;
   color: white;
   margin-top: 20px;
   white-space: nowrap;
   overflow: hidden;
   border-right: 4px solid white;
-  animation: typing 3s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+  animation: revealText 3s ease-out forwards;
 }
 
-@keyframes typing {
+@keyframes revealText {
   0% {
     width: 0;
   }
   100% {
     width: 100%;
-  }
-}
-
-@keyframes blink {
-  0%,
-  50%,
-  100% {
-    border-color: transparent;
-  }
-  25%,
-  75% {
-    border-color: white;
   }
 }
 
