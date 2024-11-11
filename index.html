@@ -7,12 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Wrap the heading in an anchor tag to make it clickable -->
-    <a href="index.html"> <!-- Link to the main page -->
+    <!-- Hamburger Menu Icon -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Heading -->
+    <a href="index.html">
         <h1 class="swift-up-text">V5RCScout!</h1>
     </a>
-    <!-- The white bar that rises beneath the heading -->
-    <div class="swift-up-bar"></div> 
+    <div class="swift-up-bar"></div>
 
     <script src="script.js"></script>
 </body>
