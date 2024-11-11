@@ -21,4 +21,3 @@ function toggleMenu() {
     menuIcon.classList.toggle('active');
     navbar.classList.toggle('active');
 }
-
