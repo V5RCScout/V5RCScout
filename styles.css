@@ -214,11 +214,14 @@ h1 span:nth-child(13) { animation-delay: 1.2s; }
 /* Reveal Text Animation */
 .reveal-text {
     position: relative;
-    font-size: 10vw;
+    font-size: 3vw; /* Adjusted font size for better visibility */
     color: white;
     white-space: nowrap;
     cursor: default;
+    opacity: 0; /* Initially hidden */
     animation: clip-text 800ms cubic-bezier(0.0, 0.0, 0.2, 1) forwards, text-revealer 800ms ease-out forwards;
+    animation-delay: 1s; /* Delay added for smooth effect */
+    text-align: center; /* Ensure text is centered */
 }
 
 .reveal-text::after {
