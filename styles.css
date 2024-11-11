@@ -116,12 +116,7 @@ h1 {
   animation: glideUp 1s ease-in-out forwards, moveToTop 1s ease-in-out 1s forwards;
 }
 
-a.swift-up-text {
-  display: inline-block;
-  overflow: hidden;
-}
-
-/* Keyframes for the glide-up effect */
+/* Keyframes for the slide-up reveal effect */
 @keyframes glideUp {
   0% {
     opacity: 0;
@@ -145,40 +140,6 @@ a.swift-up-text {
     transform: translate(-50%, 0);
   }
 }
-
-/* Keyframes for staggered letter animation */
-@keyframes glideLetter {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Apply staggered animation to each letter of the heading */
-h1 span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: glideLetter 0.5s ease-in-out forwards;
-}
-
-h1 span:nth-child(1) { animation-delay: 0s; }
-h1 span:nth-child(2) { animation-delay: 0.1s; }
-h1 span:nth-child(3) { animation-delay: 0.2s; }
-h1 span:nth-child(4) { animation-delay: 0.3s; }
-h1 span:nth-child(5) { animation-delay: 0.4s; }
-h1 span:nth-child(6) { animation-delay: 0.5s; }
-h1 span:nth-child(7) { animation-delay: 0.6s; }
-h1 span:nth-child(8) { animation-delay: 0.7s; }
-h1 span:nth-child(9) { animation-delay: 0.8s; }
-h1 span:nth-child(10) { animation-delay: 0.9s; }
-h1 span:nth-child(11) { animation-delay: 1s; }
-h1 span:nth-child(12) { animation-delay: 1.1s; }
-h1 span:nth-child(13) { animation-delay: 1.2s; }
 
 /* White bar below the heading */
 .swift-up-bar {
@@ -234,10 +195,40 @@ h1 span:nth-child(13) { animation-delay: 1.2s; }
   }
 }
 
+/* Reveal each letter of the heading one by one */
+h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: glideLetter 0.5s ease-in-out forwards;
+}
+
+/* Keyframes for each letter's glide-up effect */
+@keyframes glideLetter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger the animation for each letter */
+h1 span:nth-child(1) { animation-delay: 0s; }
+h1 span:nth-child(2) { animation-delay: 0.1s; }
+h1 span:nth-child(3) { animation-delay: 0.2s; }
+h1 span:nth-child(4) { animation-delay: 0.3s; }
+h1 span:nth-child(5) { animation-delay: 0.4s; }
+h1 span:nth-child(6) { animation-delay: 0.5s; }
+h1 span:nth-child(7) { animation-delay: 0.6s; }
+h1 span:nth-child(8) { animation-delay: 0.7s; }
+h1 span:nth-child(9) { animation-delay: 0.8s; }
+h1 span:nth-child(10) { animation-delay: 0.9s; }
+h1 span:nth-child(11) { animation-delay: 1s; }
+h1 span:nth-child(12) { animation-delay: 1.1s; }
+h1 span:nth-child(13) { animation-delay: 1.2s; }
+
 /* Responsive adjustments */
 @media screen and (max-width: 1000px) {
   :root {
     --headingSize: 35px;
   }
 }
-
