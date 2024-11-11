@@ -1,9 +1,13 @@
 // Toggle the navigation menu when the menu icon is clicked
 function toggleMenu() {
   const navbar = document.querySelector('.navbar');
+  navbar.classList.toggle('active');\
+}
+// Toggle the navigation menu when the menu icon is clicked
+function toggleMenu() {
+  const navbar = document.querySelector('.navbar');
   navbar.classList.toggle('active');
 }
-
 // Animate each letter of the heading text
 document.addEventListener("DOMContentLoaded", () => {
   const swiftUpElement = document.querySelector('.swift-up-text');
