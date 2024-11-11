@@ -60,16 +60,16 @@ a {
 .navbar {
   position: absolute;
   top: 0;
-  right: -100%; /* Initially position the navbar off-screen to the right */
+  left: -100%; /* Initially position the navbar off-screen to the left */
   width: 250px; /* Set a fixed width for the navbar */
   height: 100vh; /* Full screen height */
   background-color: rgba(0, 0, 0, 0.9); /* Dark background with slight transparency */
   display: flex;
   justify-content: flex-start; /* Align the items to the left */
   align-items: center;
-  transition: right 0.5s ease; /* Smooth slide-in transition */
+  transition: left 0.5s ease; /* Smooth slide-in transition from the left */
   z-index: 9;
-  border-left: 2px solid #fff; /* Optional: Adds a border on the left side */
+  border-right: 2px solid #fff; /* Optional: Adds a border on the right side */
 }
 
 /* Navbar list styles */
@@ -95,9 +95,9 @@ a {
   color: #ddd; /* Hover effect */
 }
 
-/* Menu open state - Slide navbar in from the right */
+/* Menu open state - Slide navbar in from the left */
 .navbar.active {
-  right: 0; /* Slide the navbar to the left */
+  left: 0; /* Slide the navbar to the left */
 }
 
 /* Heading styles and animation */
