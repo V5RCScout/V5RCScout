@@ -60,43 +60,44 @@ a {
 .navbar {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  right: -100%; /* Initially position the navbar off-screen to the right */
+  width: 250px; /* Set a fixed width for the navbar */
+  height: 100vh; /* Full screen height */
   background-color: rgba(0, 0, 0, 0.9); /* Dark background with slight transparency */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Align the items to the left */
   align-items: center;
-  transform: translateY(-100%);
-  transition: transform 0.5s ease;
+  transition: right 0.5s ease; /* Smooth slide-in transition */
   z-index: 9;
-  border-top: 2px solid #fff; /* Optional: Adds a border at the top to make it stand out */
+  border-left: 2px solid #fff; /* Optional: Adds a border on the left side */
 }
 
-
+/* Navbar list styles */
 .navbar ul {
   list-style: none;
-  text-align: center;
+  text-align: left; /* Align text to the left */
+  padding-left: 20px; /* Add some padding to the left */
 }
 
+/* Navbar item styles */
 .navbar ul li {
   margin: 20px 0;
 }
 
 .navbar ul li a {
   font-size: 24px;
-  color: white;
+  color: white; /* White text */
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .navbar ul li a:hover {
-  color: #ddd;
+  color: #ddd; /* Hover effect */
 }
 
-/* Menu open state */
+/* Menu open state - Slide navbar in from the right */
 .navbar.active {
-  transform: translateY(0);
+  right: 0; /* Slide the navbar to the left */
 }
 
 /* Heading styles and animation */
