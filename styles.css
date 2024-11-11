@@ -196,6 +196,38 @@ h1.reveal-text {
   }
 }
 
+/* Typing effect animation */
+.typing-effect {
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid white;
+  animation: typing 3s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    border-color: transparent;
+  }
+  25%,
+  75% {
+    border-color: white;
+  }
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 1000px) {
   :root {
