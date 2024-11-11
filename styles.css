@@ -142,7 +142,7 @@ h1 {
     opacity: 0;
   }
   100% {
-    width: 300px;
+    width: 600px;
     opacity: 1;
   }
 }
@@ -152,7 +152,7 @@ h1 {
     top: calc(50% + var(--headingSize) / 2 + 10px);
   }
   100% {
-    top: calc(var(--headingSize) / 1.2);
+    top: calc(var(--headingSize) / 0.9);
   }
 }
 
