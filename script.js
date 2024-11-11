@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector('.navbar');
     navbar.classList.toggle('active');
   }
+
+  // Attach event listener to the menu icon
+  const menuIcon = document.querySelector('.menu-icon');
+  menuIcon.addEventListener('click', toggleMenu);
 });
 // Animate each letter of the heading text
 document.addEventListener("DOMContentLoaded", () => {
