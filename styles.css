@@ -60,16 +60,21 @@ a {
 .navbar {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: -100%; /* Start off-screen to the left */
+  width: 250px; /* Set the width of the navigation bar */
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-100%);
-  transition: transform 0.5s ease;
+  transform: translateX(-100%); /* Hide the navbar initially */
+  transition: transform 0.5s ease-in-out; /* Smooth slide effect */
   z-index: 9;
+}
+
+/* Slide in when active */
+.navbar.active {
+  transform: translateX(0); /* Bring the navbar into view */
 }
 
 .navbar ul {
@@ -90,11 +95,6 @@ a {
 
 .navbar ul li a:hover {
   color: #ddd;
-}
-
-/* Menu open state */
-.navbar.active {
-  transform: translateY(0);
 }
 
 /* Heading styles and animation */
@@ -149,7 +149,6 @@ h1 {
   }
 }
 
-/* Updated bar animation */
 @keyframes barExpand {
   0% {
     width: 0;
@@ -204,4 +203,3 @@ h1 span:nth-child(13) { animation-delay: 1.2s; }
     --headingSize: 35px;
   }
 }
-
