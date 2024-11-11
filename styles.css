@@ -25,40 +25,22 @@ a {
   color: inherit;
 }
 
-/* Hamburger icon (three lines) */
+/* Menu icon (hamburger) */
 .menu-icon {
   position: absolute;
   top: 20px;
   left: 20px;
   width: 30px;
-  height: 20px;
   cursor: pointer;
   z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.3s ease;
 }
 
 .menu-icon .line {
   width: 100%;
   height: 3px;
   background-color: white;
-  transition: 0.3s ease;
-}
-
-/* Menu icon to 'X' transition (hamburger lines become columns) */
-.menu-icon.active .line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px); /* Top line turns into top diagonal */
-}
-
-.menu-icon.active .line:nth-child(2) {
-  opacity: 0; /* Middle line disappears */
-}
-
-.menu-icon.active .line:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px); /* Bottom line turns into bottom diagonal */
+  margin: 5px 0;
+  transition: 0.3s;
 }
 
 /* Navbar styles */
@@ -102,7 +84,7 @@ a {
   transform: translateY(0);
 }
 
-/* Heading styles */
+/* Heading styles and animation */
 h1 {
   margin: 0;
   letter-spacing: -1px;
@@ -116,7 +98,20 @@ h1 {
   animation: glideUp 1s ease-in-out forwards, moveToTop 1s ease-in-out 1s forwards;
 }
 
-/* Keyframes for the slide-up reveal effect */
+/* White bar styles */
+.swift-up-bar {
+  position: absolute;
+  top: calc(50% + var(--headingSize) / 2 + 10px);
+  left: 50%;
+  width: 300px;
+  height: 5px;
+  background-color: white;
+  transform: translateX(-50%);
+  opacity: 0;
+  border-radius: 10px;
+  animation: barExpand 1s ease-in-out 1s forwards, moveBarToTop 1s ease-in-out 2s forwards;
+}
+
 @keyframes glideUp {
   0% {
     opacity: 0;
@@ -141,27 +136,13 @@ h1 {
   }
 }
 
-/* White bar below the heading */
-.swift-up-bar {
-  position: absolute;
-  top: calc(50% + var(--headingSize) / 2 + 10px);
-  left: 50%;
-  width: 600px;
-  height: 5px;
-  background-color: white;
-  transform: translateX(-50%);
-  opacity: 0;
-  border-radius: 10px;
-  animation: barExpand 1s ease-in-out 1s forwards, moveBarToTop 1s ease-in-out 2s forwards;
-}
-
 @keyframes barExpand {
   0% {
     width: 0;
     opacity: 0;
   }
   100% {
-    width: 600px;
+    width: 300px;
     opacity: 1;
   }
 }
@@ -171,31 +152,10 @@ h1 {
     top: calc(50% + var(--headingSize) / 2 + 10px);
   }
   100% {
-    top: calc(var(--headingSize) / 0.9);
+    top: calc(var(--headingSize) / 1.2);
   }
 }
 
-/* Reveal animation for the paragraph (left to right) */
-.reveal-paragraph {
-  font-size: 20px;
-  color: white;
-  margin-top: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 4px solid white;
-  animation: revealText 3s ease-out forwards;
-}
-
-@keyframes revealText {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-/* Reveal each letter of the heading one by one */
 h1 span {
   display: inline-block;
   opacity: 0;
@@ -203,7 +163,6 @@ h1 span {
   animation: glideLetter 0.5s ease-in-out forwards;
 }
 
-/* Keyframes for each letter's glide-up effect */
 @keyframes glideLetter {
   to {
     opacity: 1;
@@ -211,7 +170,6 @@ h1 span {
   }
 }
 
-/* Stagger the animation for each letter */
 h1 span:nth-child(1) { animation-delay: 0s; }
 h1 span:nth-child(2) { animation-delay: 0.1s; }
 h1 span:nth-child(3) { animation-delay: 0.2s; }
