@@ -25,35 +25,40 @@ a {
   color: inherit;
 }
 
-/* Menu icon (hamburger) */
+/* Hamburger icon (three lines) */
 .menu-icon {
   position: absolute;
   top: 20px;
   left: 20px;
   width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
 }
 
 .menu-icon .line {
   width: 100%;
   height: 3px;
   background-color: white;
-  margin: 5px 0;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-/* Hamburger to column transition when active */
+/* Menu icon to 'X' transition (hamburger lines become columns) */
 .menu-icon.active .line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px); /* Top line turns into top diagonal */
 }
 
 .menu-icon.active .line:nth-child(2) {
-  opacity: 0; /* Hide middle line */
+  opacity: 0; /* Middle line disappears */
 }
 
 .menu-icon.active .line:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -5px); /* Bottom line turns into bottom diagonal */
 }
 
 /* Navbar styles */
