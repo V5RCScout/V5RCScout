@@ -1,37 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Animate each letter in the heading (staggered animation)
-    const swiftUpElement = document.querySelector('.swift-up-text');
-    const text = swiftUpElement.textContent.trim();
-    swiftUpElement.innerHTML = ''; // Clear the current text
-
-    text.split('').forEach((char) => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        swiftUpElement.appendChild(span);
-    });
-
-    // Typewriter effect for paragraphs
-    const paragraphs = document.querySelectorAll('.typewriter');
-    paragraphs.forEach(paragraph => {
-        const text = paragraph.textContent;
-        paragraph.textContent = ''; // Clear the text content
-        const span = document.createElement('span');
-        span.classList.add('typing');
-        span.textContent = text;
-        paragraph.appendChild(span);
-    });
-
+    // Trigger the text reveal effect on the heading
+    const swiftUpElement = document.querySelector('.swift-up-text h1');
+    swiftUpElement.classList.add('reveal-text'); // Apply reveal animation
+    
     // Hamburger menu toggle functionality
     const menuIcon = document.querySelector('.menu-icon');
     const navbar = document.querySelector('.navbar');
 
+    // Click event for the hamburger menu icon
     menuIcon.addEventListener('click', () => {
         menuIcon.classList.toggle('active');
         navbar.classList.toggle('active');
     });
 });
 
-// Function to toggle the menu visibility and animation
+// Function to toggle the menu visibility and animation (for HTML onclick use)
 function toggleMenu() {
     const menuIcon = document.querySelector('.menu-icon');
     const navbar = document.querySelector('.navbar');
