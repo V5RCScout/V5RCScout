@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   // Define the toggleMenu function after the DOM is loaded
   function toggleMenu() {
     const navbar = document.querySelector('.navbar');
@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuIcon = document.querySelector('.menu-icon');
   menuIcon.addEventListener('click', toggleMenu);
 });
+
 // Animate each letter of the heading text
 document.addEventListener("DOMContentLoaded", () => {
   const swiftUpElement = document.querySelector('.swift-up-text');
