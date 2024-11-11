@@ -1,8 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Trigger the text reveal effect on the heading
-    const swiftUpElement = document.querySelector('.swift-up-text h1');
-    swiftUpElement.classList.add('reveal-text'); // Apply reveal animation
+    const swiftUpElement = document.querySelector('.swift-up-text');
     
+    // Get the text content from the heading
+    const text = swiftUpElement.textContent.trim();
+    
+    // Clear the current text
+    swiftUpElement.innerHTML = '';
+    
+    // Wrap each character in a <span> element for the letter-by-letter animation
+    text.split('').forEach((char) => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        swiftUpElement.appendChild(span);
+    });
+
     // Hamburger menu toggle functionality
     const menuIcon = document.querySelector('.menu-icon');
     const navbar = document.querySelector('.navbar');
