@@ -26,4 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     span.textContent = char;
     swiftUpElement.appendChild(span);
   });
+  
+  // Trigger swift-up bar animation after the heading animation
+  const swiftUpBar = document.querySelector('.swift-up-bar');
+  setTimeout(() => {
+    swiftUpBar.style.opacity = 1;
+  }, 800); // Delay to match the heading animation duration
 });
