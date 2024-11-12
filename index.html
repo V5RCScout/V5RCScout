@@ -1,41 +1,38 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Define the toggleMenu function after the DOM is loaded
-  function toggleMenu() {
-    const navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('active');
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEX V5RC Scout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hamburger Menu Icon -->
+    <div class="menu-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
 
-  // Attach event listener to the menu icon
-  const menuIcon = document.querySelector('.menu-icon');
-  menuIcon.addEventListener('click', toggleMenu);
-});
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-// Animate each letter of the heading text
-document.addEventListener("DOMContentLoaded", () => {
-  const swiftUpElement = document.querySelector('.swift-up-text');
-  
-  // Get the text content from the heading
-  const text = swiftUpElement.textContent.trim();
-  
-  // Clear the current text
-  swiftUpElement.innerHTML = '';
-  
-  // Wrap each character in a <span> element for animation
-  text.split('').forEach((char) => {
-    const span = document.createElement('span');
-    span.textContent = char;
-    swiftUpElement.appendChild(span);
-  });
-  
-  // Trigger swift-up bar animation after the heading animation
-  const swiftUpBar = document.querySelector('.swift-up-bar');
-  setTimeout(() => {
-    swiftUpBar.style.opacity = 1;
-  }, 800); // Delay to match the heading animation duration
-  
-  // After the heading animation ends, move the heading and bar up
-  setTimeout(() => {
-    swiftUpElement.style.top = '20%'; // Move the heading closer to the top of the screen
-    swiftUpBar.style.top = '30%'; // Move the bar just below the heading
-  }, 1300); // Delay to make sure the heading animation has finished
-});
+    <!-- Main Headings with Effects -->
+    <a href="index.html">
+        <h1 class="swift-up-text">V5RCScout!</h1>
+    </a>
+    <div class="swift-up-bar"></div>
+
+    <!-- Reveal Text Heading -->
+    <h1 class="reveal-text">I'm here.</h1>
+
+    <script src="script.js"></script>
+</body>
+</html>
