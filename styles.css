@@ -1,242 +1,28 @@
-/* Global styles */
-* {
-  font-family: Helvetica, sans-serif;
-  color: white;
-  margin: 0;
-  padding: 0;
-}
-
 :root {
-  --headingSize: 55px;
-  --background-color: black;
-  --delay: 0;
-  --duration: 800ms;
-  --iterations: 1;
+    --delay: 0;
+    --duration: 800ms;
+    --iterations: 1;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--background-color);
-  overflow: hidden;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Menu icon (hamburger) */
-.menu-icon {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 30px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.menu-icon .line {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  margin: 5px 0;
-  transition: 0.3s;
-}
-
-/* Hamburger to column transition when active */
-.menu-icon.active .line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-icon.active .line:nth-child(2) {
-  opacity: 0; /* Hide middle line */
-}
-
-.menu-icon.active .line:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Navbar styles */
-.navbar {
-  position: absolute;
-  top: 0;
-  left: -100%; /* Initially position the navbar off-screen to the left */
-  width: 250px; /* Set a fixed width for the navbar */
-  height: 100vh; /* Full screen height */
-  background-color: rgba(0, 0, 0, 0.9); /* Dark background with slight transparency */
-  display: flex;
-  justify-content: flex-start; /* Align the items to the left */
-  align-items: center;
-  transition: left 0.5s ease; /* Smooth slide-in transition from the left */
-  z-index: 9;
-  border-right: 2px solid #fff; /* Optional: Adds a border on the right side */
-}
-
-/* Navbar list styles */
-.navbar ul {
-  list-style: none;
-  text-align: left; /* Align text to the left */
-  padding-left: 20px; /* Add some padding to the left */
-}
-
-/* Navbar item styles */
-.navbar ul li {
-  margin: 20px 0;
-}
-
-.navbar ul li a {
-  font-size: 24px;
-  color: white; /* White text */
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.navbar ul li a:hover {
-  color: #ddd; /* Hover effect */
-}
-
-/* Menu open state - Slide navbar in from the left */
-.navbar.active {
-  left: 0; /* Slide the navbar to the left */
-}
-
-/* Heading styles and animation */
-h1 {
-  margin: 0;
-  letter-spacing: -1px;
-  font-size: var(--headingSize);
-  white-space: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  animation: glideUp 1s ease-in-out forwards, moveToTop 1s ease-in-out 1s forwards;
-}
-
-/* White bar styles */
-.swift-up-bar {
-  position: absolute;
-  top: calc(50% + var(--headingSize) / 2 + 10px);
-  left: 50%;
-  width: 600px;
-  height: 5px;
-  background-color: white;
-  transform: translateX(-50%);
-  opacity: 0;
-  border-radius: 10px;
-  animation: barExpand 1s ease-in-out 1s forwards, moveBarToTop 1s ease-in-out 2s forwards;
-}
-
-@keyframes glideUp {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 20%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-}
-
-@keyframes moveToTop {
-  0% {
-    top: 50%;
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    top: 0;
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-/* Updated bar animation */
-@keyframes barExpand {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  100% {
-    width: 600px;
-    opacity: 1;
-  }
-}
-
-@keyframes moveBarToTop {
-  0% {
-    top: calc(50% + var(--headingSize) / 2 + 10px);
-  }
-  100% {
-    top: calc(var(--headingSize) / 0.9);
-  }
-}
-
-h1 span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: glideLetter 0.5s ease-in-out forwards;
-}
-
-@keyframes glideLetter {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-h1 span:nth-child(1) { animation-delay: 0s; }
-h1 span:nth-child(2) { animation-delay: 0.1s; }
-h1 span:nth-child(3) { animation-delay: 0.2s; }
-h1 span:nth-child(4) { animation-delay: 0.3s; }
-h1 span:nth-child(5) { animation-delay: 0.4s; }
-h1 span:nth-child(6) { animation-delay: 0.5s; }
-h1 span:nth-child(7) { animation-delay: 0.6s; }
-h1 span:nth-child(8) { animation-delay: 0.7s; }
-h1 span:nth-child(9) { animation-delay: 0.8s; }
-h1 span:nth-child(10) { animation-delay: 0.9s; }
-h1 span:nth-child(11) { animation-delay: 1s; }
-h1 span:nth-child(12) { animation-delay: 1.1s; }
-h1 span:nth-child(13) { animation-delay: 1.2s; }
-
-/* Responsive adjustments */
-@media screen and (max-width: 1000px) {
-  :root {
-    --headingSize: 35px;
-  }
-}
-
-/* Reveal Text Animation */
+/* Reveal Effect Text */
 .reveal-text {
     position: relative;
-    font-size: 3vw; /* Adjusted font size for better visibility */
+    font-size: 50px;
     color: white;
     white-space: nowrap;
-    cursor: default;
-    opacity: 0; /* Initially hidden */
-    animation: clip-text 800ms cubic-bezier(0.0, 0.0, 0.2, 1) forwards, text-revealer 800ms ease-out forwards;
-    animation-delay: 1s; /* Delay added for smooth effect */
-    text-align: center; /* Ensure text is centered */
-}
-
-.reveal-text::after {
-    content: "";
-    position: absolute;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #f2f98b;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    pointer-events: none;
-    animation: text-revealer 800ms ease-out forwards;
+    overflow: hidden;
+    animation: clip-text var(--duration) forwards;
 }
 
 @keyframes clip-text {
@@ -248,13 +34,3 @@ h1 span:nth-child(13) { animation-delay: 1.2s; }
     }
 }
 
-@keyframes text-revealer {
-    0%, 50% {
-        transform-origin: 0 50%;
-    }
-
-    60%, 100% {
-        transform-origin: 100% 50%;
-        transform: scaleX(1);
-    }
-}
