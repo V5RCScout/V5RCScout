@@ -33,8 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
     swiftUpBar.style.opacity = 1;
   }, 800); // Delay to match the heading animation duration
   
-  // Trigger the heading movement after animation starts
+  // After the heading animation ends, move the heading and bar up
   setTimeout(() => {
-    swiftUpElement.style.top = '20%'; // Move closer to the top of the screen
-  }, 500); // Slight delay for smoother transition
+    swiftUpElement.style.top = '15%'; // Move the heading closer to the top of the screen
+    swiftUpBar.style.top = '23%'; // Move the bar just below the heading
+  }, 1300); // Delay to make sure the heading animation has finished
 });
