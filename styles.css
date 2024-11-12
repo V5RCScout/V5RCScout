@@ -104,12 +104,13 @@ h1.swift-up-text {
     font-size: var(--headingSize);
     white-space: nowrap;
     position: absolute;
-    top: 50%;
+    top: 50%; /* Initially centered */
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
+    transition: top 1s ease-in-out;
 }
 
 h1.swift-up-text span {
@@ -147,6 +148,7 @@ h1.swift-up-text span:nth-child(9) { animation-delay: 0.8s; }
     transform: translateX(-50%);
     animation: slideUpBar 1s ease-in-out forwards;
     opacity: 0;
+    transition: top 1s ease-in-out;
 }
 
 @keyframes slideUpBar {
