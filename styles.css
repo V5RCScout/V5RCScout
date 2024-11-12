@@ -62,20 +62,19 @@ a {
 .navbar {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -250px; /* Change this to move the menu out of view initially */
+    width: 250px;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(-100%);
     transition: transform 0.5s ease;
     z-index: 9;
 }
 
 .navbar.active {
-    transform: translateX(0);
+    transform: translateX(250px); /* This brings the navbar in from the left */
 }
 
 .navbar ul {
@@ -108,6 +107,9 @@ h1.swift-up-text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 h1.swift-up-text span {
@@ -127,14 +129,12 @@ h1.swift-up-text span {
 h1.swift-up-text span:nth-child(1) { animation-delay: 0s; }
 h1.swift-up-text span:nth-child(2) { animation-delay: 0.1s; }
 h1.swift-up-text span:nth-child(3) { animation-delay: 0.2s; }
-h1.swift-up-text span:nth-child(4) { animation-delay: 0.23s; }
+h1.swift-up-text span:nth-child(4) { animation-delay: 0.3s; }
 h1.swift-up-text span:nth-child(5) { animation-delay: 0.4s; }
 h1.swift-up-text span:nth-child(6) { animation-delay: 0.5s; }
 h1.swift-up-text span:nth-child(7) { animation-delay: 0.6s; }
 h1.swift-up-text span:nth-child(8) { animation-delay: 0.7s; }
 h1.swift-up-text span:nth-child(9) { animation-delay: 0.8s; }
-h1.swift-up-text span:nth-child(3) { animation-delay: 0.9s; }
-/* Add more nth-child selectors as needed for each letter */
 
 /* Reveal effect for "I'm here." text */
 .reveal-text,
