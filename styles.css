@@ -1,198 +1,199 @@
-/* Global styles */
-* {
-  font-family: Helvetica, sans-serif;
-  color: white;
-  margin: 0;
-  padding: 0;
+:root {
+    --delay: 0;
+    --duration: 800ms;
+    --iterations: 1;
+    --headingSize: 55px;
+    --background-color: black;
 }
 
-:root {
-  --headingSize: 55px;
-  --background-color: black;
-  --delay: 0;
-  --duration: 800ms;
-  --iterations: 1;
+/* Global styles */
+* {
+    font-family: Helvetica, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--background-color);
-  overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    overflow: hidden;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Menu icon (hamburger) */
 .menu-icon {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 30px;
-  cursor: pointer;
-  z-index: 10;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 10;
 }
 
 .menu-icon .line {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  margin: 5px 0;
-  transition: 0.3s;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
 }
 
-/* Hamburger to column transition when active */
 .menu-icon.active .line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .menu-icon.active .line:nth-child(2) {
-  opacity: 0; /* Hide middle line */
+    opacity: 0;
 }
 
 .menu-icon.active .line:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Navbar styles */
+/* Navbar styles - slide in from the left */
 .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
-  z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: 9;
 }
 
 .navbar.active {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 .navbar ul {
-  list-style: none;
-  text-align: center;
+    list-style: none;
+    text-align: center;
 }
 
 .navbar ul li {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .navbar ul li a {
-  font-size: 24px;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .navbar ul li a:hover {
-  color: #ddd;
+    color: #ddd;
 }
 
-/* Slide-up effect for each letter */
+/* Heading animation styles */
 h1.swift-up-text {
-  margin: 0;
-  letter-spacing: -1px;
-  font-size: var(--headingSize);
-  white-space: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  animation: glideUp 1s ease-in-out forwards, moveToTop 1s ease-in-out 1s forwards;
+    margin: 0;
+    letter-spacing: -1px;
+    font-size: var(--headingSize);
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 h1.swift-up-text span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: glideLetter 0.5s ease-in-out forwards;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: glideLetter 0.5s ease-in-out forwards;
 }
 
 @keyframes glideLetter {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Delay for each letter in the slide-up effect */
 h1.swift-up-text span:nth-child(1) { animation-delay: 0s; }
 h1.swift-up-text span:nth-child(2) { animation-delay: 0.1s; }
 h1.swift-up-text span:nth-child(3) { animation-delay: 0.2s; }
-h1.swift-up-text span:nth-child(4) { animation-delay: 0.3s; }
+h1.swift-up-text span:nth-child(4) { animation-delay: 0.23s; }
 h1.swift-up-text span:nth-child(5) { animation-delay: 0.4s; }
 h1.swift-up-text span:nth-child(6) { animation-delay: 0.5s; }
 h1.swift-up-text span:nth-child(7) { animation-delay: 0.6s; }
 h1.swift-up-text span:nth-child(8) { animation-delay: 0.7s; }
 h1.swift-up-text span:nth-child(9) { animation-delay: 0.8s; }
-h1.swift-up-text span:nth-child(10) { animation-delay: 0.9s; }
+h1.swift-up-text span:nth-child(3) { animation-delay: 0.9s; }
+/* Add more nth-child selectors as needed for each letter */
 
-/* White bar styles */
-.swift-up-bar {
-  position: absolute;
-  top: calc(50% + var(--headingSize) / 2 + 10px);
-  left: 50%;
-  width: 600px;
-  height: 5px;
-  background-color: white;
-  transform: translateX(-50%);
-  opacity: 0;
-  border-radius: 10px;
-  animation: barExpand 1s ease-in-out 1s forwards, moveBarToTop 1s ease-in-out 2s forwards;
+/* Reveal effect for "I'm here." text */
+.reveal-text,
+.reveal-text::after {
+    animation-delay: var(--animation-delay, 2s);
+    animation-iteration-count: var(--iterations, 1);
+    animation-duration: var(--duration, 800ms);
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
-@keyframes glideUp {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 20%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
+.reveal-text {
+    --animation-delay: var(--delay, 0);
+    --animation-duration: var(--duration, 800ms);
+    --animation-iterations: var(--iterations, 1);
+    position: relative;
+    font-size: 10vw;
+    animation-name: clip-text;
+    color: #FFF;
+    white-space: nowrap;
+    cursor: default;
 }
 
-@keyframes moveToTop {
-  0% {
-    top: 50%;
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-  100% {
+.reveal-text::after {
+    content: "";
+    position: absolute;
+    z-index: 999;
     top: 0;
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f2f98b;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    pointer-events: none;
+    animation-name: text-revealer;
 }
 
-@keyframes barExpand {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  100% {
-    width: 600px;
-    opacity: 1;
-  }
+@keyframes clip-text {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
 }
 
-@keyframes moveBarToTop {
-  0% {
-    top: calc(50% + var(--headingSize) / 2 + 10px);
-  }
-  100% {
-    top: calc(var(--headingSize) / 0.9);
-  }
+@keyframes text-revealer {
+    0%, 50% {
+        transform-origin: 0 50%;
+    }
+    60%, 100% {
+        transform-origin: 100% 50%;
+    }
+    60% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
 }
+
