@@ -140,11 +140,11 @@ h1.swift-up-text span:nth-child(9) { animation-delay: 0.8s; }
 /* Swift-up bar animation under the text */
 .swift-up-bar {
     position: absolute;
-    top: 58%; /* Adjusted so the bar is below the heading */
+    top: 57%; /* Adjusted to be just below the V5RCScout! text */
     left: 50%;
-    width: 100%;
+    width: 600px; /* Length of the bar */
     height: 5px;
-    background-color: #f2f98b;
+    background-color: white; /* Change color to white */
     transform: translateX(-50%);
     animation: slideUpBar 1s ease-in-out forwards;
     opacity: 0;
