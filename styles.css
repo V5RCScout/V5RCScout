@@ -104,7 +104,7 @@ h1.swift-up-text {
     font-size: var(--headingSize);
     white-space: nowrap;
     position: absolute;
-    top: 30%; /* Adjusted to move the text higher on the screen */
+    top: 15%; /* Adjusted to move the text higher */
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -141,7 +141,7 @@ h1.swift-up-text span:nth-child(10) { animation-delay: 0.9s; }
 /* Swift-up bar animation under the text */
 .swift-up-bar {
     position: absolute;
-    top: 45%; /* Adjusted to be just below the V5RCScout! text */
+    top: 25%; /* Adjusted to be closer to the V5RCScout! text */
     left: 50%;
     width: 600px; /* Length of the bar */
     height: 5px;
@@ -223,4 +223,5 @@ h1.swift-up-text span:nth-child(10) { animation-delay: 0.9s; }
         transform: scaleX(0);
     }
 }
+
 
